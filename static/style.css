@@ -1,0 +1,97 @@
+body {
+    margin: 0;
+    background: #0f172a;
+    color: white;
+    font-family: Arial;
+}
+
+.container {
+    width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1, h2, h3 {
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
+
+.metrics {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.metric-box {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+input {
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+button {
+    grid-column: span 2;
+    padding: 16px;
+    background: #f7931a;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ffb347;
+}
+
+.result {
+    margin-top: 35px;
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.up {
+    color: #22c55e;
+}
+
+.down {
+    color: #ef4444;
+}
+
+.confidence {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.graphs {
+    margin-top: 45px;
+}
+
+.graphs img {
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 10px;
+    background: white;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Trend Prediction System</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Bitcoin Trend Prediction System</h1>
+
+    <p class="subtitle">
+        Machine Learning system for short-term Bitcoin price movement prediction
+    </p>
+
+    <div class="metrics">
+
+        <div class="metric-box">
+            <h3>Accuracy</h3>
+            <p>{{ accuracy }}</p>
+        </div>
+
+        <div class="metric-box">
+            <h3>F1 Score</h3>
+            <p>{{ f1_score }}</p>
+        </div>
+
+    </div>
+
+    <form method="post">
+
+        <input type="number" step="any" name="Open" placeholder="Open Price" required>
+
+        <input type="number" step="any" name="High" placeholder="High Price" required>
+
+        <input type="number" step="any" name="Low" placeholder="Low Price" required>
+
+        <input type="number" step="any" name="Close" placeholder="Close Price" required>
+
+        <input type="number" step="any" name="Volume" placeholder="Volume" required>
+
+        <input type="number" step="any" name="Daily_Return" placeholder="Daily Return" required>
+
+        <input type="number" step="any" name="MA_7" placeholder="7 Day Moving Average" required>
+
+        <input type="number" step="any" name="MA_14" placeholder="14 Day Moving Average" required>
+
+        <input type="number" step="any" name="MA_30" placeholder="30 Day Moving Average" required>
+
+        <input type="number" step="any" name="Volatility_7" placeholder="7 Day Volatility" required>
+
+        <button type="submit">
+            Predict Trend
+        </button>
+
+    </form>
+
+    {% if prediction %}
+
+    <div class="result">
+
+        <h2>Prediction Result</h2>
+
+        {% if prediction == "UP" %}
+            <h1 class="up">UP</h1>
+        {% else %}
+            <h1 class="down">DOWN</h1>
+        {% endif %}
+
+        <p>{{ explanation }}</p>
+
+        <div class="confidence">
+            <p>Confidence UP: {{ confidence_up }}</p>
+            <p>Confidence DOWN: {{ confidence_down }}</p>
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    <div class="graphs">
+
+        <h2>Model Visualizations</h2>
+
+        <img src="/static/confusion_matrix.png" alt="Confusion Matrix">
+
+        <img src="/static/feature_importance.png" alt="Feature Importance">
+
+        <img src="/static/roc_curve.png" alt="ROC Curve">
+
+    </div>
+
+</div>
+
+</body>
+</html>
